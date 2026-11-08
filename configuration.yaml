@@ -1,0 +1,16 @@
+baseDirectory: "/recueil"
+title: "My recueil"
+css:
+  colorBg: "#fffef7"
+  colorFg: "#394655"
+  colorLink: "brown"
+  colorHover: "brown"
+  colorSelectionFg: "#fffef7"
+  colorSelectionBg: "brown"
+siteUrl: "https://recueil.theobori.cafe"
+publicSourceDirectory: "./public"
+images:
+  maxPixelSize: 960
+  autoResize: true
+thumbnailPixelSize: 256
+webringUrl: ""
