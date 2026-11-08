@@ -28,6 +28,8 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - name: restore timestamps
         uses: chetan/git-restore-mtime-action@v2
+        with:
+          args: --verbose --force
       - name: Build my static web gallery
         run: |
           # Not build the derivation to avoid overrided file dates (1970-01-01...)
