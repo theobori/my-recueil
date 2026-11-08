@@ -26,9 +26,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
-      - run: |
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+      - name: Build my static web gallery
+        run: |
           # Not build the derivation to avoid overrided file dates (1970-01-01...)
-          nix shell .# --command recueil \
+          nix develop .# --command recueil \
               -configuration "./configuration.yaml" \
               -source-directory "./my-images" \
               -destination-directory "./my-recueil" \

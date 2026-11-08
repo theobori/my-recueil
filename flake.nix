@@ -29,8 +29,6 @@
         devShells = {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              go
-              golangci-lint
               http-server
               recueilPkg
               exiftool
