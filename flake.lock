@@ -107,11 +107,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1794157805,
-        "narHash": "sha256-4y3JNdwASc4C14wRIzrU68XdtHwqsq9+78/mX2OPkNo=",
+        "lastModified": 1794174664,
+        "narHash": "sha256-efVK+Ns5e/95qvxR6KOBZnGNYvNNku9RFZe0q1xuik0=",
         "owner": "theobori",
         "repo": "recueil",
-        "rev": "61117372b389120bf5e39688c4cedd1e47f24085",
+        "rev": "9f6656a0d502c782e608b1cf282c100bb03f5128",
         "type": "github"
       },
       "original": {

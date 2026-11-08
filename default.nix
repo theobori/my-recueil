@@ -17,11 +17,11 @@ stdenvNoCC.mkDerivation {
     runHook preBuild
 
     mkdir -p ./my-recueil
-    recueil \
-        -configuration "./configuration.yaml" \
-        -source-directory "./my-images" \
-        -destination-directory "./my-recueil" \
-        -verbose
+    recueil build \
+        --configuration "./configuration.yaml" \
+        --source-directory "./my-images" \
+        --destination-directory "./my-recueil" \
+        --verbose
 
     runHook postBuild
   '';
