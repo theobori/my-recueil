@@ -1,6 +1,6 @@
 { ... }:
 {
   projectRootFile = "flake.nix";
-  programs.gofmt.enable = true;
+  programs.black.enable = true;
   programs.nixfmt.enable = true;
 }

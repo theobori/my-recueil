@@ -5,6 +5,7 @@ import subprocess
 
 from pathlib import Path
 
+
 def transform_image(path: Path) -> None:
     """Compress, strip metadata and optimize an image from a given path.
 
@@ -49,6 +50,7 @@ def transform_image(path: Path) -> None:
     )
 
     print(result.stdout)
+
 
 if __name__ == "__main__":
     paths_str = sys.argv[1:]
