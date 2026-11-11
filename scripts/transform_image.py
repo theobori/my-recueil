@@ -2,7 +2,6 @@
 
 import sys
 import subprocess
-import shutil
 
 from pathlib import Path
 
@@ -19,8 +18,6 @@ def transform_image(path: Path) -> None:
         raise ValueError(f"Missing ext on path '{path}'.")
 
     ext = parts[-1]
-
-    result: subprocess.CompletedProcess[str]
     match ext:
         case "png":
             result = subprocess.run(
@@ -39,17 +36,21 @@ def transform_image(path: Path) -> None:
                 check=True,
             )
         case _:
-            raise ValueError(f"The file extension '{ext}' is not handled.")
+            raise ValueError(f"The file path '{path}' could not be handled.")
+
+    print(result.stdout)
+
+    result = subprocess.run(
+        f"exiftool -overwrite_original -all= {path}",
+        shell=True,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
 
     print(result.stdout)
 
 if __name__ == "__main__":
-    for program in ("pngquant", "jpegoptim",):
-        if shutil.which(program) is None:
-            print(f"The program '{program}' does not exist.", file=sys.stderr)
-            sys.exit(1)
-
-    transformed_count = 0
     paths_str = sys.argv[1:]
 
     for path_str in paths_str:
@@ -63,8 +64,3 @@ if __name__ == "__main__":
         except ValueError as e:
             print(e, file=sys.stderr)
             continue
-
-        transformed_count += 1
-        print(f"Successfully transformed '{path}'.")
-
-    print(f"Transformed {transformed_count} images.")
