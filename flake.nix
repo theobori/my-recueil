@@ -32,6 +32,9 @@
               http-server
               recueilPkg
               exiftool
+              pngquant
+              jpegoptim
+              python3
             ];
           };
         };
