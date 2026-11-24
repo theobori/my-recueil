@@ -13,4 +13,6 @@ images:
   maxPixelSize: 960
   autoResize: true
 thumbnailPixelSize: 256
-webrings: []
+webrings:
+  - title: "webring.nchrs.xyz"
+    url: "https://webring.nchrs.xyz/"
